@@ -1,0 +1,103 @@
+import java.util.Collections;
+import java.util.List;
+
+public class HardCodedList {
+	
+	
+	public List<Catalog> getCatalog (int userId){
+		
+		return Collections.singletonList(
+				new Catalog("Die Hard", "Action movie", 4)
+
+				);
+	}
+
+	
+	public static void main(String[] args) {
+		
+		HardCodedList hcl=new HardCodedList();
+		Catalog cat=new Catalog(3);		
+		
+		System.out.println(hcl.getCatalog(1));
+	}
+	
+	
+	
+
+}
+
+
+
+ class Catalog {
+	int userId;
+	String name;
+	String Description;
+	int ratings;
+	
+	
+	public Catalog(String name, String description, int ratings) {
+		super();
+		this.name = name;
+		Description = description;
+		this.ratings = ratings;
+	}
+
+
+	public int getUserId() {
+		return userId;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Catalog [userId=" + userId + ", name=" + name + ", Description=" + Description + ", ratings=" + ratings
+				+ "]";
+	}
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+	public Catalog(int userId) {
+		super();
+		this.userId=userId;
+	}
+
+	
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getDescription() {
+		return Description;
+	}
+
+
+	public void setDescription(String description) {
+		Description = description;
+	}
+
+
+	public int getRatings() {
+		return ratings;
+	}
+
+
+	public void setRatings(int ratings) {
+		this.ratings = ratings;
+	}
+	
+	
+	
+	
+
+}
