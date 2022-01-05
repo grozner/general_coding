@@ -1,0 +1,30 @@
+import java.util.HashMap; // 
+import java.util.List;
+
+
+public class SomeArrays {
+	
+	public static void main(String[] args) {
+			
+	String [] rawNames= {"Gil", "joe", "sam", "bill","Gil", "joe","joe","joe", "sam", "Gil", "GiL"};
+    
+	List<String>names =new ArrayList<String>();
+	
+	for (String item: rawNames){
+		names.add(item.toUpperCase());
+		
+	}
+		
+	HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+    for (String key: names){
+    	if (!map.containsKey(key)){
+        	map.put(key,1);
+        	}
+    	else 
+    		map.put(key, map.get(key) + 1);
+    	}
+    System.out.println(map);
+
+    }
+ } 
