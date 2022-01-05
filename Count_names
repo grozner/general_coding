@@ -1,12 +1,21 @@
+package practice1;
+
 import java.util.HashMap; // 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap; // 
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class SomeArrays {
 	
 	public static void main(String[] args) {
 			
-	String [] rawNames= {"Gil", "joe", "sam", "bill","Gil", "joe","joe","joe", "sam", "Gil", "GiL"};
+	String [] rawNames= {"Jill", "joe", "sam", "bill","Jill", "joe","joe","joe", "sam", "JilL", "JiLL"};
     
 	List<String>names =new ArrayList<String>();
 	
@@ -26,5 +35,21 @@ public class SomeArrays {
     	}
     System.out.println(map);
 
-    }
- } 
+   
+///////////////   using streams will accomplish the same  ///////////////////////////////////
+   
+   List<String>names2 =new ArrayList<String>();
+    
+    for (String item: rawNames){
+		names2.add(item.toUpperCase());
+		
+	}
+    
+Map<String, Long> output=names2.stream()
+		.collect(Collectors
+		.groupingBy (Function.identity(), Collectors.counting()));
+
+System.out.println(output);
+
+
+}
