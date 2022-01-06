@@ -1,0 +1,44 @@
+package GreetExample;
+
+
+interface GreetInterface {
+	public void greet();
+}
+
+class Greeter {
+	public void greetme(GreetInterface greetInterface) {
+	
+			greetInterface.greet();
+	}
+}
+
+
+class Message implements GreetInterface {
+	@Override
+	public void greet() {
+		System.out.println("this is a message for you");
+		
+	}
+}
+
+
+class Message2  implements GreetInterface {
+	public void greet(){
+		System.out.println("this is not a message for you");
+	}
+}
+
+
+ public class GreetApp {
+
+	public static void main(String[] args) {
+		
+		Greeter greeter=new Greeter();
+		Message msg=new Message();
+		greeter.greetme(msg);
+		
+		Message2 msg2=new Message2();
+		greeter.greetme(msg2);
+	}
+	
+}
