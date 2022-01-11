@@ -1,0 +1,32 @@
+package generics;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenericExample {
+
+	public static void main(String[] args) {
+		
+		List<Object> bob= new ArrayList<>();;	
+        bob.add(12323);
+        bob.add("test item");
+		
+        for (int i=0;i<bob.size();i++){
+        	System.out.println(bob.get(i));
+        }
+		GenericPrinter<String> printer=new GenericPrinter<>("this is the thing that is suppose to be printed");
+		printer.print();
+	}
+}
+
+
+class GenericPrinter <T> {
+    T thingToPrint;
+	
+	public GenericPrinter( T thingToPrint){
+		this.thingToPrint=thingToPrint;
+	}
+	
+	public void print(){
+		System.out.println(thingToPrint);
+	}	
+}
