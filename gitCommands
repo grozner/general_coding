@@ -1,0 +1,18 @@
+Git Commands
+Generating a new SSH key
+You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on GitHub.com to enable authentication for Git operations over SSH.
+
+Note: GitHub improved security by dropping older, insecure key types on March 15, 2022.
+
+As of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.com.
+
+RSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm. RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.
+
+Open Git Bash.
+
+Paste the text below, substituting in your GitHub email address.
+
+ssh-keygen -t ed25519 -C "your_email@example.com"
+Note: If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
