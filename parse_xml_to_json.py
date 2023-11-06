@@ -1,5 +1,7 @@
 from collections import defaultdict
 
+import json
+
 def etree_to_dict(t):
     d = {t.tag: {} if t.attrib else None}
     children = list(t)
