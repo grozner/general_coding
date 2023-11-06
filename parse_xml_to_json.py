@@ -35,3 +35,16 @@ d = etree_to_dict(e)
 x=json.dumps(d)
 
 pprint(x)
+
+
+'''
+<root>
+  <e />
+  <e>text</e>
+  <e name="value" />
+  <e name="value">text</e>
+  <e> <a>text</a> <b>text</b> </e>
+  <e> <a>text</a> <a>text</a> </e>
+  <e> text <a>text</a> </e>
+</root>
+'''
